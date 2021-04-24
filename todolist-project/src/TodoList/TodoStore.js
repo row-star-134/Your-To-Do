@@ -154,13 +154,13 @@ class TodoStore extends React.Component{
     render(){
         return(
         this.state.showFull === true ?        
-        <div className='container p-4 shadow text-light' style={{border:'1px solid black',background: '#556270',background: '-webkit-linear-gradient(to right, #556270, #ff6b6b)', background: 'linear-gradient(to right, #556270, #ff6b6b)'}}>
+        <div className='container p-4 shadow text-light mt-3' style={{border:'1px solid black',background: '#556270',background: '-webkit-linear-gradient(to right, #556270, #ff6b6b)', background: 'linear-gradient(to right, #556270, #ff6b6b)'}}>
            <>
            <div className='p-2 my-4'>
                <Header title='Your TodoList'/>
                <input type='search' value={this.state.search} style={{width:'88%', height:'40px'}} placeholder='Serch Your todos' onChange={this.handleSearch} />
                {/* <button onClick={this.handleClickForm}></button> */}
-               <Model icon='fas fa-plus-circle' handleChangeValue= {this.handleChangeValue} todo={this.state.todo} content={this.state.content} sendHandler={this.handleSubmit}/>
+               <Model icon='fas fa-plus-circle' head='Create Todo' handleChangeValue= {this.handleChangeValue} todo={this.state.todo} content={this.state.content} sendHandler={this.handleSubmit}/>
             </div>
             <hr/>
             {this.state.status <= 0 ?
@@ -174,7 +174,7 @@ class TodoStore extends React.Component{
            </>
         
         </div> : 
-        <div  className='container p-4 shadow text-light' style={{border:'1px solid black',background: '#556270',background: '-webkit-linear-gradient(to right, #556270, #ff6b6b)', background: 'linear-gradient(to right, #556270, #ff6b6b)'}}>
+        <div  className='container p-4 mt-3 shadow text-light' style={{border:'1px solid black',background: '#556270',background: '-webkit-linear-gradient(to right, #556270, #ff6b6b)', background: 'linear-gradient(to right, #556270, #ff6b6b)'}}>
             <button onClick={this.handleBack}>Back</button>
             <div className='p-2 my-4'>
                 <Header title={this.state.singleTodo.name}/>
@@ -182,6 +182,7 @@ class TodoStore extends React.Component{
                 
             </div>
             </div>
+            
         )
     }
 }
